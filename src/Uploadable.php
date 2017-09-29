@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Traits;
+namespace KingOfCode\Uploadable;
 
-use App\Traits\Uploader;
+use KingOfCode\Uploadable\Uploader;
 use Illuminate\Database\Eloquent\Model;
 
 trait Uploadable {

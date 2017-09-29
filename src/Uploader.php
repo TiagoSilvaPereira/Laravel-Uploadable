@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits;
+namespace KingOfCode\Uploadable;
 
 use Image;
 use Illuminate\Support\Facades\Schema;
