@@ -43,7 +43,7 @@ And then, configure your uploadable fields for images and files inside your mode
 ```php
 class Product extends Model
 {
-    use SearchableTrait, Uploadable;
+    use Uploadable;
 
     protected $fillable = [
         'name',
