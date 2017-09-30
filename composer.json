@@ -2,7 +2,7 @@
     "name": "kingofcode/laravel-uploadable",
     "description": "Laravel Uploadable trait to automatically upload images and files with minimum configuration",
     "type": "library",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "license": "MIT",
     "keywords": [
         "upload",
@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-          "KingOfCode\\Uploadable\\": "src/"
+          "KingOfCode\\Upload\\": "src/"
         }
     }
 }
