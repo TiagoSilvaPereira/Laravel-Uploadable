@@ -1,8 +1,8 @@
 <?php
 
-namespace KingOfCode\Uploadable;
+namespace KingOfCode\Upload;
 
-use Image;
+use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 
@@ -152,7 +152,9 @@ class Uploader
 
     private function getResizedImage($image, $size) {
         if($size !== 'image_width') {
-            $image = Image::make($image)->resize($size, null, function ($constraint) {
+            $image = Image::make($image);
+            $image->orientate();
+            $image->resize($size, null, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             });
