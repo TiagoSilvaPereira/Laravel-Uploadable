@@ -66,10 +66,9 @@ class Product extends Model
 }
 ```
 
-And is only it! After this configuration, you can send file data from the client side with the same name of each file field of the model. The package
-will make the magic!
+That's all! After this configuration, you can send file data from the client side with the same name of each file field of the model. The package will make the magic!
 
-## Choose Image Upload Size
+## Change Image Upload Size
 
 The default sizes (width) for images are:
 
@@ -77,7 +76,7 @@ The default sizes (width) for images are:
 * medium - 300px
 * normal - Image width
 
-You can modify these values directly in the $uploadableImages array. The accepted values are: image_width or a number specifying the number of pixels.
+You can modify these values directly in the $uploadableImages array. The accepted values are: **image_width** or a number specifying the quantity of pixels.
 
 ```php
 protected $uploadableImages = [
@@ -87,7 +86,7 @@ protected $uploadableImages = [
 ];
 ```
 
-## Choose Image Upload Types
+## Change Image Upload Types
 
 By default, this package saves **thumb**, **medium** and **normal** images. To disable some upload type, add this array to your model:
 
@@ -96,6 +95,14 @@ protected $imageResizeTypes = [
   'medium' => false,
   // ... You can disable medium and normal images upload too
 ];
+```
+
+## Set the upload folder name
+
+The upload will be make inside a specific folder with the name of the model, but in the plural mode. Eg: for the **Product** model, the images will be uploaded to the 'images/products' directory, and the other files, inside 'files/products'. If you want to modify this directory, add this code to your model:
+
+```php
+public $uploadFolderName = 'products'; // Name of your folder
 ```
 
 ## Getting the File Path inside Views, etc
