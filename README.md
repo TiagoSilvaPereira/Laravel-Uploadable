@@ -97,7 +97,7 @@ protected $imageResizeTypes = [
 ];
 ```
 
-## Set the upload folder name
+## Setting the upload folder name
 
 The upload will be make inside a specific folder with the name of the model, but in the plural mode. Eg: for the **Product** model, the images will be uploaded to the 'images/products' directory, and the other files, inside 'files/products'. If you want to modify this directory, add this code to your model:
 
