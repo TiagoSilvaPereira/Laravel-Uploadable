@@ -147,12 +147,15 @@ class Uploader
      */
     private function getModelName()
     {
-        return strtolower(str_plural((new \ReflectionClass($this->model))->getShortName()));
+        return (isset($this->model->uploadFolderName)) 
+            ? $this->model->uploadFolderName 
+            : strtolower(str_plural((new \ReflectionClass($this->model))->getShortName()));
     }
 
     private function getResizedImage($image, $size) {
+        $image = Image::make($image);
+
         if($size !== 'image_width') {
-            $image = Image::make($image);
             $image->orientate();
             $image->resize($size, null, function ($constraint) {
                 $constraint->aspectRatio();

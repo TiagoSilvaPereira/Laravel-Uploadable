@@ -59,14 +59,14 @@ trait Uploadable {
      * Get model image uploadable names
      */
     public function getUploadableImages() {
-        return $this->uploadableImages;
+        return $this->uploadableImages ?: [];
     }
 
     /**
      * Get model file uploadable names
      */
     public function getUploadableFiles() {
-        return $this->uploadableFiles;
+        return $this->uploadableFiles ?: [];
     }
 
     /**
