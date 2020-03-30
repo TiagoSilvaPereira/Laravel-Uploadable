@@ -29,6 +29,10 @@ trait Uploadable {
         static::deleting(function (Model $model) {
             $model->deleteFiles();
         });
+
+        static::replicating(function (Model $model) {
+            $model->replicateFiles();
+        });
     }
 
     /**
@@ -43,6 +47,12 @@ trait Uploadable {
      */
     public function deleteFiles() {
         (new Uploader($this))->deleteFiles();
+    }
+    /**
+     * Handle file replicating.
+     */
+    public function replicateFiles() {
+        (new Uploader($this))->replicateFiles();
     }
 
     public function getImagePath($imageField, $type = 'normal')

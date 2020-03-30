@@ -147,8 +147,8 @@ class Uploader
      */
     private function getModelName()
     {
-        return (isset($this->model->uploadFolderName)) 
-            ? $this->model->uploadFolderName 
+        return (isset($this->model->uploadFolderName))
+            ? $this->model->uploadFolderName
             : strtolower(str_plural((new \ReflectionClass($this->model))->getShortName()));
     }
 
@@ -219,5 +219,19 @@ class Uploader
 
     public function getFilePath($fileField) {
         return Storage::url($this->model->{$fileField});
+    }
+
+    public function replicateFiles() {
+        $replicator = new Replicator();
+        $model = $this->model;
+
+        foreach ($this->images as $imageFieldName => $attributes) {
+            $imageTypes = array_keys($attributes);
+            $model->{$imageFieldName} = $replicator->replicateImages($model->{$imageFieldName}, $imageTypes);
+        }
+
+        foreach ($this->otherFiles as $fileFieldName) {
+            $model->{$imageField} = $replicator->replicateFile($model->{$imageField});
+        }
     }
 }
