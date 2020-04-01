@@ -135,7 +135,7 @@ The basic structure of this package is inspired in the [Laravel Auto Upload](htt
 
 ## Contributing
 
-Feel free to comment, open issues and send PR's. Enjoy!!
+Feel free to comment, open issues and send PR's. Enjoy it!!
 
 ## License
 
