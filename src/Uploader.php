@@ -227,11 +227,15 @@ class Uploader
 
         foreach ($this->images as $imageFieldName => $attributes) {
             $imageTypes = array_keys($attributes);
-            $model->{$imageFieldName} = $replicator->replicateImages($model->{$imageFieldName}, $imageTypes);
+            if(!empty($model->{$imageFieldName})) {
+                $model->{$imageFieldName} = $replicator->replicateImages($model->{$imageFieldName}, $imageTypes);
+            }
         }
 
         foreach ($this->otherFiles as $fileFieldName) {
-            $model->{$imageField} = $replicator->replicateFile($model->{$imageField});
+            if(!empty($model->{$imageFieldName})) {
+                $model->{$fileFieldName} = $replicator->replicateFile($model->{$fileFieldName});
+            }
         }
     }
 }
