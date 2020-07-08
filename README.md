@@ -18,13 +18,13 @@ This package includes [Intervention Image](http://image.intervention.io/) to res
 ## About Upload
 
 This package uses the [Laravel File Storage](https://laravel.com/docs/5.5/filesystem) to keep the file management. The files will 
-be stored inside the default disk. To access the images or files, you need to create a symbolic link inside your project:
+be stored inside the default disk. For example, if you are using the public disk, to access the images or files, you need to create a symbolic link inside your project:
 
 ```
 php artisan storage:link
 ```
 
-And then, configure your default filesystem, inside config/filesystems.php to the public disk:
+And then, configure your default filesystem, inside config/filesystems.php to point the public disk:
 
 ```
 'default' => env('FILESYSTEM_DRIVER', 'public'),
