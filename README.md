@@ -15,6 +15,8 @@ composer require kingofcode/laravel-uploadable
 
 This package includes [Intervention Image](http://image.intervention.io/) to resize and manage the images.
 
+**For Laravel version less than 5.8.10, please use 0.1.7 version, as 0.1.8 added model replication that is supported only for Laravel > 5.8.10**
+
 ## About Upload
 
 This package uses the [Laravel File Storage](https://laravel.com/docs/5.5/filesystem) to keep the file management. The files will 
