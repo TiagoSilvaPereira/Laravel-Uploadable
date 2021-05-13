@@ -109,7 +109,7 @@ public $uploadFolderName = 'products'; // Name of your folder
 
 ## Getting the File Path inside Views, etc
 
-To get a image file path, you can call **getImagePath($imageField, $type)** from your object. Eg:
+To get an image file path, you can call **getImagePath($imageField, $type)** from your object. Eg:
 
 ```php
 
@@ -133,7 +133,7 @@ $pdf = $product->getFilePath('pdf');
 
 ## Inspiration
 
-The basic structure of this package is inspired in the [Laravel Auto Upload](https://github.com/dees040/laravel-auto-upload)
+The basic structure of this package is inspired in the [Laravel Auto Upload](https://github.com/dees040/laravel-auto-upload) package
 
 ## Contributing
 
